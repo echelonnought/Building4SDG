@@ -1,3 +1,6 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable max-len */
+/* eslint-disable linebreak-style */
 const covid19ImpactEstimator = (data) => {
   let factor;
   const time = data.timeToElapse;
