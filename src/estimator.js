@@ -3,6 +3,7 @@ const covid19ImpactEstimator = (data) => {
   const time = data.timeToElapse;
   const impact = {};
   const severeImpact = {};
+ 
 
   if ((data.periodType) === 'days') {
     factor = Math.floor(time / 3);
@@ -16,6 +17,13 @@ const covid19ImpactEstimator = (data) => {
   severeImpact.currentlyInfected = ((data.reportedCases) * 50);
   impact.infectionsByRequestedTime = (impact.currentlyInfected * (2 ** factor));
   severeImpact.infectionsByRequestedTime = (severeImpact.currentlyInfected * (2 ** factor));
+
+  impact.severeCasesByRequestedTime = Math.floor((impact.infectionsByRequestedTime) * (.15));
+  severeImpact.severeCasesByRequestedTime = Math.floor((severeImpact.infectionsByRequestedTime) * (.15));
+
+  const hospitalBedsAvailable = Math.floor(data.totalHospitalsBeds);
+  severeImpact.hospitalBedsByRequestedTime = hospitalBedsAvailable - severeImpact.severeCasesByRequestedTime;
+
   const output = {
     data,
     impact,
