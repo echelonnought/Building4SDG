@@ -36,8 +36,8 @@ const covid19ImpactEstimator = (data) => {
   );
   const convertDollarsForSevereImpact = severeImpact.infectionsByRequestedTime * getFlightUSD;
   const convertDollarsForImpact = impact.infectionsByRequestedTime * getFlightUSD;
-  severeImpact.dollarsInFlight = Math.trunc(convertDollarsForSevereImpact.toFixed(2));
-  impact.dollarsInFlight = Math.trunc(convertDollarsForImpact.toFixed(2));
+  severeImpact.dollarsInFlight = Math.trunc(convertDollarsForSevereImpact);
+  impact.dollarsInFlight = Math.trunc(convertDollarsForImpact);
   const output = {
     data,
     impact,
