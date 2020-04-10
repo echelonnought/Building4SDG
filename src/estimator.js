@@ -28,8 +28,17 @@ const covid19ImpactEstimator = (data) => {
   severeImpact.casesForICUByRequestedTime = Math.trunc(severeImpact.infectionsByRequestedTime * 0.05);
   impact.casesForVentilatorsByRequestedTime = Math.trunc(impact.infectionsByRequestedTime * 0.02);
   severeImpact.casesForVentilatorsByRequestedTime = Math.trunc(severeImpact.infectionsByRequestedTime * 0.02);
-  impact.dollarInFlight = Math.trunc((impact.infectionsByRequestedTime * 0.65 * 1.5) / 30);
-  severeImpact.dollarInFlight = Math.trunc((severeImpact.infectionsByRequestedTime * 0.65 * 1.5) / 30);
+  // eslint-disable-next-line no-undef
+  const getFlightUSD = flightInUSD(
+    data.periodType,
+    time,
+    data.region.avgDailyIncomeInUSD,
+    data.region.avgDailyIncomePopulation
+  );
+  const convertDollarsForSevereImpact = severeImpact.infectionsByRequestedTime * getFlightUSD;
+  const convertDollarsForImpact = impact.infectionsByRequestedTime * getFlightUSD;
+  severeImpact.dollarsInFlight = convertDollarsForSevereImpact.toFixed(2);
+  impact.dollarsInFlight = convertDollarsForImpact.toFixed(2);
   const output = {
     data,
     impact,
