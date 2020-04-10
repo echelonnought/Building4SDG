@@ -28,8 +28,7 @@ const covid19ImpactEstimator = (data) => {
   severeImpact.casesForICUByRequestedTime = Math.trunc(severeImpact.infectionsByRequestedTime * 0.05);
   impact.casesForVentilatorsByRequestedTime = Math.trunc(impact.infectionsByRequestedTime * 0.02);
   severeImpact.casesForVentilatorsByRequestedTime = Math.trunc(severeImpact.infectionsByRequestedTime * 0.02);
-  // eslint-disable-next-line no-undef
-  const getFlightUSD = flightInUSD(
+  const getFlightUSD = (
     data.periodType,
     time,
     data.region.avgDailyIncomeInUSD,
