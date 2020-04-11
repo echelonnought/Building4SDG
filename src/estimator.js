@@ -1,26 +1,32 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable space-infix-ops */
+/* eslint-disable linebreak-style */
+/* eslint-disable arrow-body-style */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-shadow */
+/* eslint-disable linebreak-style */
+/* eslint-disable indent */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable linebreak-style */
 /* eslint-disable max-len */
 /* eslint-disable linebreak-style */
 const covid19ImpactEstimator = (data) => {
-  let factor;
-  let days;
   const time = data.timeToElapse;
   const impact = {};
   const severeImpact = {};
-  if (data.periodType === 'days') {
-    factor = Math.floor(time / 3);
-  } else if (data.periodType === 'weeks') {
-    factor = Math.floor((7 * time) / 3);
+  const days = () => {
+    if (data.periodType === 'days') {
+  time;
+} else if (data.periodType === 'weeks') {
+  7 * time;
   } else if (data.periodType === 'months') {
-    factor = Math.floor((30 * time) / 3);
+  30 * time;
   }
-  if (data.periodType === 'days') {
-    days = time;
-  } else if (data.periodType === 'weeks') {
-    days = 7 * time;
-  } else if (data.periodType === 'months') {
-    days = 30 * time;
-  }
+ };
+ const factor = (days) => {
+  return Math.floor(days/3);
+};
   impact.currentlyInfected = data.reportedCases * 10;
   severeImpact.currentlyInfected = data.reportedCases * 50;
   impact.infectionsByRequestedTime = impact.currentlyInfected * 2 ** factor;
