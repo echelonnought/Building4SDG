@@ -1,4 +1,6 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
+/* eslint-disable linebreak-style */
 /* eslint-disable space-infix-ops */
 /* eslint-disable linebreak-style */
 /* eslint-disable arrow-body-style */
@@ -15,7 +17,7 @@ const covid19ImpactEstimator = (data) => {
   const time = data.timeToElapse;
   const impact = {};
   const severeImpact = {};
-  const days = () => {
+  const days = (time) => {
     if (data.periodType === 'days') {
   time;
 } else if (data.periodType === 'weeks') {
