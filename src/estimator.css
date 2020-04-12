@@ -1,0 +1,141 @@
+html, body, h1 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Hind', sans-serif;
+
+}
+
+h1 {
+    font-size: 45px;
+    color: #fff;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-align: center;
+    padding: 1em 0 0 0.4em;
+}
+
+@keyframes slideleft {
+    form{
+        background-position: 0%;
+    }
+    to{
+        background-position: 90000%;
+    }
+}
+
+.my-main {
+    background-image: url(image/coro.jpg);
+    background-repeat: repeat-x;
+    animation: slideleft 20000s infinite linear;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+
+}
+.bg-layer {
+    background: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+}
+.icon-1 label input {
+   margin: 0 0 2em;
+   padding: 0.6em 1em;
+   background: rgba(255, 255, 255, 0.94);
+   color: #fff;
+}
+/* .icon-1 label input:focus {
+    border: white;
+} */
+
+.icon-1 input[placeholder] {
+    color: #fff;
+}
+.icon-1 input.text-input {
+    /* background: white;
+  color: #bebdbd;
+  margin-bottom: 10px;
+  line-height: 1.5rem;
+  padding: 0.9rem 1.4rem;
+  border: none; */
+}
+.icon-1 span.fas{
+    color: #fff;
+    width: 40px;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 4px 120px;
+}
+
+.icon-1 label.period-typefor {
+    font-size: 16px;
+    text-align: center;
+    padding: inherit;
+    line-height: 1.5rem;
+    color: ivory;
+    margin-left: 80px;
+}
+.icon-1 select {
+    
+    /* color: #fff; */
+    /* border: none; */
+    width: 80%;
+    display: inline-block;
+    background: transparent;
+    margin: 6px 13px;
+    padding: 6px 80px;
+    color: #fff;
+}
+.main-icon{
+  text-align: center
+}
+
+.header-left-bottom {
+   margin: 1px auto;
+   padding-left: 30px;
+}
+
+.main-icon span.fas {
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 1em;
+}
+.main-header {
+    max-width: 310px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 999;
+    padding: 3em 2em;
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+}
+
+.header-left-bottom input[type='number'] {
+    /* outline: none; */
+    font-size: 16px;
+    color: #fff;
+    /* border: none; */
+    width: 80%;
+    display: inline-block;
+    background: transparent;
+    letter-spacing: 1px;
+}
+.header-left-bottom button.btn {
+    background: #0c7ebb;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transform: 0.3s all;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin-top: 16px;
+    margin-left: 13px;
+    padding: 10px 4px;
+    width: 80%; 
+}
+.header-left-bottom button.btn:focus, .header-left-bottom button.btn:hover {
+    background-color: lightseagreen;
+    transition: ease-in-out 0.4s;
+}
